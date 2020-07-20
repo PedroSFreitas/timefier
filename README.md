@@ -9,6 +9,18 @@ A super simple timer with desktop notification written in C, using libnotify.
 water heating up to brew a coffee, so I thought it was about time to code a
 simple and quick application for it.
 
+## Usage
+
+```
+-t | -title   : Title for the notification.
+-m | -message : Message (body) off the notification.
+-d | -delay   : Seconds to fire the notification.
+
+Example:
+
+timefier -t 'Coffeeeeeee!' -m 'Water should be ready now, darling' -d 120
+```
+
 ## Build
 
 ```
