@@ -5,6 +5,16 @@
 #include <time.h>
 #include <libnotify/notify.h>
 
+void usage()
+{
+    fprintf(stderr,
+        "-t | --title   : Title for the notification.\n"
+        "-m | --message : Message (body) off the notification.\n"
+        "-d | --delay   : Seconds to fire the notification.\n"
+        "\nExample:\n"
+        "timefier -t 'Coffe!' -m 'Water should be ready now.' -d 120\n");
+}
+
 int main(int argc, char *argv[])
 {
     NotifyNotification *nt;
@@ -25,6 +35,11 @@ int main(int argc, char *argv[])
         {NULL, 0, NULL, 0}
     };
 
+    if (argc <= 1) {
+        usage();
+        return 1;
+    }
+
     while ((ch = getopt_long(argc, argv, "t:m:d:", longopts, NULL)) != -1) {
         char *n;
 
@@ -41,6 +56,9 @@ int main(int argc, char *argv[])
                 fprintf(stderr, "Out of range at %d.\n", __LINE__);
                 return 1;
             }
+            break;
+        default:
+            usage();
             break;
         }
     }
