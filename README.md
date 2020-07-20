@@ -12,9 +12,9 @@ simple and quick application for it.
 ## Usage
 
 ```
--t | -title   : Title for the notification.
--m | -message : Message (body) off the notification.
--d | -delay   : Seconds to fire the notification.
+-t | --title   : Title for the notification.
+-m | --message : Message (body) off the notification.
+-d | --delay   : Seconds to fire the notification.
 
 Example:
 
