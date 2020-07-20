@@ -24,7 +24,11 @@ int main(int argc, char *argv[])
         char *title;
         char *message;
         unsigned long delay;
-    } args;
+    } args = {
+        .title = "Timer",
+        .message = "Ready!",
+        .delay = 5,
+    };
 
     char *appname = argv[0];
 
