@@ -7,7 +7,7 @@ LIBNOTIFY += $(shell pkg-config --cflags libnotify)
 FLAGS  = -Wall -Wextra -pedantic -std=c99 -Wconversion -Wsign-conversion
 
 ifndef DEBUG
-FLAGS += -s -g
+FLAGS += -s -g -O2
 FLAGS += -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2
 endif
 
