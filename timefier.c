@@ -5,6 +5,12 @@
 #include <time.h>
 #include <libnotify/notify.h>
 
+struct args_t {
+    char *title;
+    char *message;
+    unsigned long delay;
+};
+
 void usage()
 {
     fprintf(stderr,
@@ -20,17 +26,13 @@ int main(int argc, char *argv[])
     NotifyNotification *nt;
     unsigned int ch;
 
-    struct {
-        char *title;
-        char *message;
-        unsigned long delay;
-    } args = {
+    char *appname = argv[0];
+
+    struct args_t args = {
         .title = "Timer",
         .message = "Ready!",
         .delay = 5,
     };
-
-    char *appname = argv[0];
 
     struct option longopts[] = {
         {"title", required_argument, NULL, 't'},
